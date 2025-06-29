@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Учёт рабочего времени</title>
+  <!-- Основные метаданные -->
+<meta name="description" content="Простое веб-приложение для учёта рабочего времени, подсчёта часов и заработка. Работает прямо в браузере, без установки.">
+<meta name="keywords" content="учёт рабочего времени, трекер часов, тайм-трекинг, калькулятор зарплаты, web app, браузерное приложение, без регистрации">
+<meta name="author" content="Андрей">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Open Graph для Facebook / Telegram / VK -->
+<meta property="og:title" content="Трекер рабочего времени — Простой и удобный">
+<meta property="og:description" content="Вводи часы, считай зарплату и экспортируй в JSON. Работает прямо в браузере.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com"> <!-- Заменить на твой URL -->
+<meta property="og:image" content="https://example.com/cover.png"> <!-- Иконка или баннер -->
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Учёт рабочего времени — Без лишнего">
+<meta name="twitter:description" content="Простой веб-инструмент для ввода смен, подсчёта времени и заработка.">
+<meta name="twitter:image" content="https://example.com/cover.png"> <!-- Тот же баннер -->
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Учёт рабочего времени</h1>
+
+    <label for="date">Дата:</label>
+    <input type="date" id="date">
+
+    <label for="start">Начало:</label>
+    <input type="time" id="start">
+
+    <label for="end">Окончание:</label>
+    <input type="time" id="end">
+
+    <label for="rate">Тариф (₪/час):</label>
+    <input type="number" id="rate" placeholder="Например, 500">
+
+    <button onclick="saveEntry()">Сохранить</button>
+    <button onclick="clearData()">Очистить базу</button>
+    <button onclick="exportData()">Экспорт JSON</button>
+    <input type="file" accept=".json" onchange="importData(event)">
+
+    <h2>История</h2>
+    <ul id="history"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
